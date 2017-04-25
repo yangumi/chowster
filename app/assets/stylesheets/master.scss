@@ -8,8 +8,9 @@ else use added font from assets/fonts ; font-family: chunkfiveroman;
 
 
 
+@import "font-awesome";
 
- @import "bootstrap";
+@import "bootstrap";
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;

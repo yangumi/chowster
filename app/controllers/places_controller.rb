@@ -1,8 +1,11 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all.paginate(:page => params[:page], :per_page => 3)
-    @places_last = Place.last
+    # using kaminari
+    @places = Place.page params[:page]
+    # using paginate
+    # @places = Place.all.paginate(:page => params[:page], :per_page => 3)
+    
   end
 
   def new
