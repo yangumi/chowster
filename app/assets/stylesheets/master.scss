@@ -37,6 +37,7 @@ body {
 .navbar {
   background: image_url('pinkdust.png');
   box-shadow: 0px 1px 3px #2a2a2a;
+  margin-bottom: 0;
 }
 
 .navbar-inverse .navbar-brand {
@@ -96,8 +97,11 @@ blockquote p {
   width: 100%;
   position: absolute;
   left: 0;
+  top: 150px;
+  height: 135px;
 }
 
 .carousel {
   box-shadow: 0px 3px 8px #2a2a2a;
+  max-height: 100%;
 }
