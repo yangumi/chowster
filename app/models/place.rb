@@ -7,12 +7,12 @@ class Place < ApplicationRecord
 
   validates :name, :address, :description, presence: true, length: { minimum: 3 }
 
-  def comment_email
-    comments.last.user.email if comments.last.present? && comments.last.user.email
+  def user_email
+    user.email if user && user.email
   end
 
   def human_rating
     comments.last.humanized_rating if comments.last.present? && comments.last.humanized_rating
   end
-  
+
 end
