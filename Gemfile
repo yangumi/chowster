@@ -53,6 +53,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker'
 end
 
   gem 'bootstrap', '~> 4.0.0.alpha6'
@@ -64,3 +65,4 @@ gem "font-awesome-rails"
 gem "devise"
 gem "geocoder"
 gem "figaro"
+gem 'carrierwave', '~> 1.0'
