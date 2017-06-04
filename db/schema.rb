@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170531235912) do
     t.string   "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "picture"
   end
 
   create_table "places", force: :cascade do |t|
@@ -42,7 +43,6 @@ ActiveRecord::Schema.define(version: 20170531235912) do
     t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "picture"
     t.index ["user_id"], name: "index_places_on_user_id", using: :btree
   end
 

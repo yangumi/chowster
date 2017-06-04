@@ -1,6 +1,10 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
+    def photo_params
+      params.require(:photo).permit(:caption, :picture)
+    end
+
   # GET /photos
   # GET /photos.json
   def index
@@ -68,7 +72,5 @@ class PhotosController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def photo_params
-      params.require(:photo).permit(:caption, :picture)
-    end
+
 end

@@ -6,17 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# delete all users - clears db
+User.destroy_all
 # delete all places - clears db
 Place.destroy_all
 #delete all comments - clears db
 Comment.destroy_all
+User.destroy_all
 
+User.create!(email: 'chunsaa88@gmail.com',
+             password: 'password',
+             password_confirmation: 'password')
 
-# Create 50 places, with set user id of 1, and set address, and faker blah ; ! means to throw an exception if 
+# Create 50 places, with set user id of 1, and set address, and faker blah ; ! means to throw an exception if
 # validation fails from place model
 
+user = User.first
+
 50.times do
-  Place.create!(user_id: 1, name: Faker::Company.name, address: '345 Spear St, San Francisco, CA 94119', description: Faker::Company.bs )
+  Place.create!(user_id: user.id, name: Faker::Company.name, address: '345 Spear St, San Francisco, CA 94119', description: Faker::Company.bs )
 end
 
 # give an array of place instances in db
@@ -29,6 +37,6 @@ ratings = %w(1_star, 2_stars, 3_stars, 4_stars, 5_stars)
 # create! means to throw an exception if validation fails from the comment model
 places.each do | place |
   (2..5).to_a.sample.times do
-    Comment.create!(user_id: 1, message: Faker::Pokemon.location, rating: ratings.sample, place_id: place.id)
+    Comment.create!(user_id: user.id, message: Faker::Pokemon.location, rating: ratings.sample, place_id: place.id)
   end
 end

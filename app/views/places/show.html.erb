@@ -101,6 +101,7 @@
       </blockquote>
     </div>
   <% end %>
+  
 </div>
 
 <!-- Modal Add a Photo-->
@@ -138,5 +139,16 @@
 </div>
 
 <!-- Button trigger modal Add a Photo -->
+<div class="clear"></div>
 <div class="col-10 offset-4">
-<h1 class="float-left">Photos</h1>
+  <h1 class="float-left">Photos</h1>
+    <%= if place.photos.present? %> 
+    <% @place.photos.each do |photo| %> 
+  <div>
+    <%= image_tag photo.picture %>
+     <b><%= photo.caption%></b> 
+      <% end %>
+   <% end %>   
+  </div>
+</div>  
+
