@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
     def photo_params
-      params.require(:photo).permit(:caption, :picture)
+      params.require(:photo).permit(:caption, :picture, :place_id)
     end
 
   # GET /photos
@@ -29,7 +29,6 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
